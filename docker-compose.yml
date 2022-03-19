@@ -1,0 +1,12 @@
+version: "3.3"
+
+services:
+  bot:
+    container_name: "notify_all-bot"
+    build:
+      context: .
+    stop_signal: SIGINT
+    command: python main.py
+    restart: unless-stopped
+    volumes:
+      - .:/src
